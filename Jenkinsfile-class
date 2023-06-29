@@ -1,0 +1,27 @@
+node {
+    def mavenTool = tool name: 'Maven-cloud'
+  stage('git checkout')
+    {
+    git credentialsId: 'GitExplain', url: 'https://github.com/raycoy-solutions/maven-web-app'
+    }
+  stage('build artifact')
+    {
+    sh "${mavenTool}/bin/mvn clean"
+    }
+  stage('code quality analysis') 
+    {
+    
+    }
+  stage('upload to nexus')
+    {
+    
+    }
+  stage('deploy to tomcat')
+    {
+    
+    }
+  stage('Send email notification')
+    {
+    
+    }
+  }
